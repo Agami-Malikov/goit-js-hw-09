@@ -6,13 +6,18 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-// body.style.backgroundColor = "#000"
-
-
 const onStartBtnClick = () => {
-  setInterval(() => {
+  intervalId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-}
+  startBtn.disabled = true;
+};
 
+const onStopBtnClick = () => {
+  clearInterval(intervalId);
+  body.style.backgroundColor = '#ffffff';
+  startBtn.disabled = false;
+};
+
+stopBtn.addEventListener('click', onStopBtnClick);
 startBtn.addEventListener('click', onStartBtnClick);

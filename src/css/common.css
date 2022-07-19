@@ -16,3 +16,19 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.wrapper {
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.field:not(:last-child) {
+  margin-right: 10px;
+}
